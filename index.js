@@ -27,6 +27,29 @@ app.get('/api/todos', (req, res) => {
     res.json(todos);
 });
 
+app.get('/api/todos/:id', (req, res) => {
+    const todo = todos.find((t) => t.id === parseInt(req.params.id));
+    if (!todo) {
+        return res.status(404).json({ message: 'To-Do not found' });
+    }
+    res.json(todo);
+});
+
+app.put('/api/todos/:id', (req, res) => {
+    const { title, description, dueDate, status } = req.body;
+    const todo = todos.find((t) => t.id === parseInt(req.params.id));
+    if (!todo) {
+        return res.status(404).json({ message: 'To-Do not found' });
+    }
+
+    todo.title = title || todo.title;
+    todo.description = description || todo.description;
+    todo.dueDate = dueDate || todo.dueDate;
+    todo.status = status || todo.status;
+
+    res.json(todo);
+});
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

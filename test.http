@@ -1,0 +1,42 @@
+POST http://localhost:5000/api/todos
+Content-Type: application/json
+
+{
+  "title": "Code project",
+  "description": "Build a to do list app using express and later integrate a react js front end",
+  "dueDate": "2022-12-31",
+  "status": "pending"
+}
+
+###
+POST http://localhost:5000/api/todos
+Content-Type: application/json
+
+{
+    "title": "Learn React",
+    "description": "Complete React course and practice building components",
+    "dueDate": "2023-01-15",
+    "status": "pending"
+}
+
+###
+POST http://localhost:5000/api/todos
+Content-Type: application/json
+
+{
+    "title": "Database Design",
+    "description": "Design and implement database schema for the todo app",
+    "dueDate": "2023-01-10",
+    "status": "pending"
+}
+
+###
+POST http://localhost:5000/api/todos
+Content-Type: application/json
+
+{
+    "title": "Testing",
+    "description": "Write unit tests and integration tests for the app",
+    "dueDate": "2023-01-20",
+    "status": "pending"
+}

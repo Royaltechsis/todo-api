@@ -10,17 +10,17 @@ const todos = [];
 app.post('/api/todos', (req, res) => {
     const { title, description, dueDate, status } = req.body;
 
-    console.log('Received data:', req.body);  // Logs the request body
+    console.log('Received data:', req.body);  
 
-    // Validate required fields
+    
     if (!title || !description || !dueDate || !status) {
         return res.status(400).json({ error: 'Missing required fields' });
     }
 
     const newTodo = { id: nextId++, title, description, dueDate, status };
-    todos.push(newTodo);  // Push the new Todo into the todos array
+    todos.push(newTodo); 
     
-    res.status(201).json(newTodo);  // Return the newly created Todo
+    res.status(201).json(newTodo);  
 });
 
 app.get('/api/todos', (req, res) => {

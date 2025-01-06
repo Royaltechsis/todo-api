@@ -9,6 +9,26 @@ Content-Type: application/json
 }
 
 ###
+
+
+PUT http://localhost:5000/api/todos/1
+Content-Type: application/json
+
+{
+    "title": "Finish She Codes Project",
+    "description": "Finish developing the she codes africa todo list api project",
+    "dueDate": "2024-12-31",
+    "status": "completed"
+}
+
+###
+
+
+DELETE http://localhost:5000/api/todos/1
+
+
+
+###
 POST http://localhost:5000/api/todos
 Content-Type: application/json
 
